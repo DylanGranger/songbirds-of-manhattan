@@ -1,1 +1,23 @@
 # songbirds-of-manhattan
+
+This project is an analysis and mapping of songbird sightings in Manhattan during the Spring over three years - 2018, 2020, and 2022 using sighting data from eBird. The purpose of this analysis was to determine if there were noticeable differences in population counts or distribution of species before and after the 2020 Covid pandemic. The results of this study (including the maps themselves) can be found on [this storymaps page](https://storymaps.arcgis.com/stories/b97d8320ceb7413e9db2b8ebb0868741). This repository contains the R script that was used to filter and sort data from eBird as well as instructions on how to replicate this process.
+
+# Initial Download
+This project makes use of data from [eBird](https://science.ebird.org/en), a crowdsourced compendium of bird sightings organized and maintained by the Cornell Lab of Ornithology. eBird allows users to download their data for research purposes as long as they sign up for a Cornell Lab account first. The basic eBird dataset is used for this project. Our initial download was completed with the following filter options:
+
+1. Species: All species
+2. Region: New York, New York, United States (US)
+3. Date Range: From January 2018 to September 2023
+  * **NOTE**: This range was used before we had decided on our exact parameters for dates within our project. Later on this range is narrowed down further in R. In theory this download could be three separate downloads of April 2018/2020/2022 to May 2018/2020/2022, reducing the size of the download and initial file, but this would also require re-working of the R script used for filtering.
+4. Options: "YES" to including sampling event data, "NO" to including unvetted data.
+
+After completing this download, the file should be saved to whatever directory will serve as the working directory for R.
+
+# Filtering the Data
+A single R file is provided that will filter this data set into the aggregated data which we used for our mappings. The file itself is annotated to explain its processes. In essence it filters the dataset down to bird species which belong to the Passeriformes (songbird) family, and then filters the sightings into the three date ranges (Spring 2018, 2020, and 2022). It then outputs several sets of CSVs for each year:
+
+1. **songbirdsYEAR.csv**: Includes every sighting as a separate row, with every original variable from the eBird dataset.
+2. **songbird_count_YEAR**: Includes the same rows as songbirdsYEAR, but with many superfluous variables removed.
+3. **songbird_aggregated_YEAR**: Instead of each row representing a sighting, each row is a different species of songbird. The first column is the total number of that species seen during the relevant time period.
+
+eBird asks researchers not to publish or distribute eBird data in its original format, so these spreadsheets are not directly linked on this repository. Sample spreadsheets are included that have the same variable/column names and a few rows of example data for demonstration purposes.
