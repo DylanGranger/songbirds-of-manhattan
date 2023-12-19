@@ -2,6 +2,8 @@
 
 This project is an analysis and mapping of songbird sightings in Manhattan during the Spring over three years - 2018, 2020, and 2022 using sighting data from eBird, conducted by Gabriella Evergreen and Dylan Granger. The purpose of this analysis was to determine if there were noticeable differences in population counts or distribution of species before and after the 2020 Covid pandemic. The results of this study (including the maps themselves) can be found on [this storymaps page](https://storymaps.arcgis.com/stories/b97d8320ceb7413e9db2b8ebb0868741). This repository contains the R script that was used to filter and sort data from eBird as well as instructions on how to replicate this process.
 
+![Story Map](https://github.com/DylanGranger/songbirds-of-manhattan/blob/main/storymap_screenshot.png)
+
 # Initial Download
 This project makes use of data from [eBird](https://science.ebird.org/en), a crowdsourced compendium of bird sightings organized and maintained by the Cornell Lab of Ornithology. eBird allows users to download their data for research purposes as long as they sign up for a Cornell Lab account first. The basic eBird dataset is used for this project. Our initial download was completed with the following filter options:
 
