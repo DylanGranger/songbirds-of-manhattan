@@ -13,6 +13,8 @@ This project makes use of data from [eBird](https://science.ebird.org/en), a cro
 
 After completing this download, the file should be saved to whatever directory will serve as the working directory for R.
 
+In addition to sighting data from eBird, this project also requires the use of eBird's taxonomy spreadsheet, which is used to filter bird species by the family they belong to. [The spreadsheet can be downloaded here](https://www.birds.cornell.edu/clementschecklist/introduction/updateindex/october-2023/download/). It is important to note that the initial data for this project was downloaded before the October 2023 update to the spreadsheet, and so it used the 2022 version instead. With each update the taxon numbering is changed, and these numbers must match up to whichever numbers are present in the actual data. If you are looking at this project after October 2024 you may have to use a newer version of the taxonomy spreadsheet.
+
 # Filtering the Data
 A single R file is provided that will filter this data set into the aggregated data which we used for our mappings. The file itself is annotated to explain its processes. In essence it filters the dataset down to bird species which belong to the Passeriformes (songbird) family, and then filters the sightings into the three date ranges (Spring 2018, 2020, and 2022). It then outputs several sets of CSVs for each year:
 
